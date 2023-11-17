@@ -17,7 +17,7 @@
 0. clone repository
 1. 下載實價登錄資料並解壓縮至./external資料夾中
 	- [本次競賽使用的所有實價登錄資料](https://drive.google.com/file/d/1MiKuqADlzohEteiMsTDi8ZhA2JDO9moq/view?usp=sharing)
-2. 將主辦單位提供的訓練與測試資料放置於datasets資料夾內
+2. 將主辦單位提供的訓練與測試資料放置於./datasets資料夾內，包含以下檔案
 	- training_data.csv
 	- public_dataset.csv
 	- private_dataset.csv
