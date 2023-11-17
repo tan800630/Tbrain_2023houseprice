@@ -32,15 +32,15 @@ def parse_date(s):
 
 
 def main():
-    df = pd.read_csv('30_Training Dataset_V2/training_data.csv')
+    df = pd.read_csv('datasets/training_data.csv')
 
     # outlier deletion
     df = df[~df['ID'].isin(['TR-5660' ,'TR-8800'])]  #
 
     df.reset_index(drop = True, inplace = True)
 
-    test_df = pd.read_csv('30_Public Dataset_Public Sumission Template_v2/public_dataset.csv')
-    testp_df = pd.read_csv('30_Public Dataset_Public Sumission Template_v2/private_dataset.csv')
+    test_df = pd.read_csv('datasets/public_dataset.csv')
+    testp_df = pd.read_csv('datasets/private_dataset.csv')
 
     df_all = pd.concat([df, test_df, testp_df], axis = 0, ignore_index=True)
     df_all.reset_index(drop = True, inplace = True)
@@ -138,7 +138,7 @@ def main():
         'age_diff':age_diff_list,
     })
 
-    with open("ext_data_processed\id_2_count_private.pkl", "wb") as f:
+    with open("ext_data_processed/id_2_count_private.pkl", "wb") as f:
         pickle.dump(id_2_count, f)
 
 

@@ -119,9 +119,9 @@ def main():
     else:
         print('Validation mode : take 20% data to estimate mape score.')
     
-    df = pd.read_csv('30_Training Dataset_V2/training_data.csv')
-    test_df = pd.read_csv('30_Public Dataset_Public Sumission Template_v2/public_dataset.csv')
-    testp_df = pd.read_csv('30_Public Dataset_Public Sumission Template_v2/private_dataset.csv')
+    df = pd.read_csv('datasets/training_data.csv')
+    test_df = pd.read_csv('datasets/public_dataset.csv')
+    testp_df = pd.read_csv('datasets/private_dataset.csv')
 
     # outlier deletion
     df = df[~df['ID'].isin(['TR-5660' ,'TR-8800'])] 
@@ -430,7 +430,7 @@ def main():
 
 
     if test_mode:
-        sample_submission = pd.read_csv('30_Public Dataset_Public Sumission Template_v2/public_private_submission_template.csv')
+        sample_submission = pd.read_csv('datasets/public_private_submission_template.csv')
         sample_submission['predicted_price'] = np.mean(test_pred_ls, axis = 0)
         sample_submission.to_csv(saved_name, index = False)
     

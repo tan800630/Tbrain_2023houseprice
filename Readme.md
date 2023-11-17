@@ -14,9 +14,15 @@
 
 ## Running
 
-1. clone repository
-2. 下載實價登錄資料並解壓縮至./external資料夾中
+0. clone repository
+1. 下載實價登錄資料並解壓縮至./external資料夾中
 	- [本次競賽使用的所有實價登錄資料](https://drive.google.com/file/d/1MiKuqADlzohEteiMsTDi8ZhA2JDO9moq/view?usp=sharing)
+2. 將主辦單位提供的訓練與測試資料放置於datasets資料夾內
+	- training_data.csv
+	- public_dataset.csv
+	- private_dataset.csv
+	- public_private_submission_template.csv
+
 3. 安裝套件
 ```bash
 pip install -r requirements.txt
@@ -40,3 +46,5 @@ python 2.Preproc_modeling.py --mode validation
 # 預測模式
 python 2.Preproc_modeling.py --mode test
 ```
+
+> Note : 若需直接驗證作法與分數可如上述直接執行.py檔案，然而在此同步提供.ipynb檔案以便檢視建模過程中各階段的作法。
