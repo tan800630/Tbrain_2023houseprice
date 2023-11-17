@@ -18,12 +18,25 @@
 2. 下載實價登錄資料並解壓縮至./external資料夾中
 	- [本次競賽使用的所有實價登錄資料](https://drive.google.com/file/d/1MiKuqADlzohEteiMsTDi8ZhA2JDO9moq/view?usp=sharing)
 3. 安裝套件
-	- pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
+```
+
 4. 外部資料處理與額外特徵檔案產生
-	- python 0.real_price_dataset_preproc.py
-	- python 1.Extra_feature.py
+```bash
+# 實價登錄檔案合併
+python 0.real_price_dataset_preproc.py
+
+# 外部資料處理與特徵轉換
+python 1.Extra_feature.py
+```
+
 5. 資料前處理與模型訓練
-	- 驗證模式
-		- python 2.Preproc_modeling.py --mode validation
-	- 對預測資料進行預測
-		- python 2.Preproc_modeling.py --mode test
+
+```bash
+# 驗證模式
+python 2.Preproc_modeling.py --mode validation
+
+# 預測模式
+python 2.Preproc_modeling.py --mode test
+```
