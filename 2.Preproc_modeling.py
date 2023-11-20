@@ -150,11 +150,11 @@ def main():
     else:
         df_all = df
 
-    df.reset_index(drop = True, inplace = True)
+    df_all.reset_index(drop = True, inplace = True)
 
 
     # average distance of knn
-    all_dist = distance_matrix(df[['縱坐標', '橫坐標']], df[['縱坐標', '橫坐標']])
+    all_dist = distance_matrix(df_all[['縱坐標', '橫坐標']], df_all[['縱坐標', '橫坐標']])
     np.fill_diagonal(all_dist, all_dist.max())
 
     take_id_fns = []
@@ -426,7 +426,7 @@ def main():
             test_pred_ls.append(valid_pred)
 
     if not test_mode:
-        print('valid error (averaging) : ', mean_absolute_percentage_error(y_true = valid_y, y_pred = np.mean(test_pred_ls, axis = 0)))
+        print('valid error (ensemble) : ', mean_absolute_percentage_error(y_true = valid_y, y_pred = np.mean(test_pred_ls, axis = 0)))
 
 
     if test_mode:

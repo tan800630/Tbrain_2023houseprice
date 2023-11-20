@@ -2,6 +2,7 @@ import os
 import re
 import glob
 import math
+import ntpath
 import pandas as pd
 import numpy as np
 import calendar
@@ -145,7 +146,7 @@ if __name__ == '__main__':
                     os.path.join(main_dir, time_intvl, f) for f in os.listdir(os.path.join(main_dir, time_intvl)) if re.search('lvr_land_'+sale_code, f)
                 ]):
                     manifest = pd.read_csv(os.path.join(main_dir, time_intvl, 'manifest.csv'))
-                    city = manifest[manifest['name'] == xls_file.split('\\')[-1]]['description'].values[0][:3]
+                    city = manifest[manifest['name'] == ntpath.split(xls_file)[-1]]['description'].values[0][:3]
 
                     if file_idx == 0:
                         print(xls_file, end=f', {city}{sale_type}...')
@@ -204,7 +205,7 @@ if __name__ == '__main__':
 
     for path in files_list:
         df = pd.read_csv(path)
-        df['縣市'] = mapping_dict[path.split('\\')[-1][0]]
+        df['縣市'] = mapping_dict[ntpath.split(path)[-1][0]]
         df_list.append(df)
     
     df_all = pd.concat(df_list)
@@ -222,7 +223,7 @@ if __name__ == '__main__':
 
     for path in files_list:
         df = pd.read_csv(path)
-        df['縣市'] = mapping_dict[path.split('\\')[-1][0]]
+        df['縣市'] = mapping_dict[ntpath.split(path)[-1][0]]
         df_list.append(df)
     
     df_all = pd.concat(df_list)
