@@ -8,9 +8,10 @@
 
 - 0.real_price_dataset_preproc.py : 針對實價登錄資料進行前處理
 	- 預設資料放置路徑: ./external_data/實價登錄/...
-- 1.Extra_feature.py : 將外部資料進行處理並轉換為建模時需要的特徵
+- 1.Extra_feature.py / .ipynb : 將外部資料進行處理並轉換為建模時需要的特徵
 	- 處理完的檔案會存於./ext_data_processed
-- 2.Preproc_modeling.py : 資料前處理、其他特徵工程、模型訓練與預測
+- 2.Preproc_modeling.py / .ipynb : 資料前處理、其他特徵工程、模型訓練與預測
+- Analysis.ipynb : 結案報告相關分析程式碼
 
 ## Running
 
